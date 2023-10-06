@@ -35,5 +35,15 @@ namespace AddressBookService
             Console.WriteLine("Table created successfully");
             con.Close();
         }
+
+        public static void InsertIntoTable()
+        {
+            string query = "Insert into AddressBook values('Kavitha', 'Hegde', 'Ramateertha', 'Shimoga', 'Karnataka', 577421, 8431042981, 'kavitharamaswamy26@gmail.com')";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Data inserted successfully");
+            con.Close();
+        }
     }
 }

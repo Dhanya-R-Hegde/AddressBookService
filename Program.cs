@@ -5,7 +5,9 @@
         static void Main(string[] args)
         {
             //AddressBookOperations.CreateDatabase();
-            AddressBookOperations.CreateTable();
+            //AddressBookOperations.CreateTable();
+            AddressBookOperations.InsertIntoTable();
+
         }
     }
 }
