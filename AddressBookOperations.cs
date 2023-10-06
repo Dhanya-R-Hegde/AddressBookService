@@ -66,5 +66,33 @@ namespace AddressBookService
             con.Close();
         }
 
+        public static void RetriveDataBasedOnCity()
+        {
+            AddressBookModel model = new AddressBookModel();
+            string query = "Select * from AddressBook where City='Shimoga'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            SqlDataReader sqlDataReader = cmd.ExecuteReader();
+            if (sqlDataReader.HasRows)
+            {
+                Console.WriteLine("------Data------");
+                while (sqlDataReader.Read())
+                {
+                    model.Id = Convert.ToInt32(sqlDataReader["Id"]);
+                    model.FirstName = Convert.ToString(sqlDataReader["FirstName"]);
+                    model.LastName = Convert.ToString(sqlDataReader["LastName"]);
+                    model.Address = Convert.ToString(sqlDataReader["Address"]);
+                    model.City = Convert.ToString(sqlDataReader["City"]);
+                    model.State = Convert.ToString(sqlDataReader["State"]);
+                    model.Zip = Convert.ToInt32(sqlDataReader["Zip"]);
+                    model.PhoneNumber = Convert.ToInt64(sqlDataReader["PhoneNumber"]);
+                    model.Email = Convert.ToString(sqlDataReader["Email"]);
+
+                    Console.WriteLine("Id : {0}\nFirstName : {1}\nLastName : {2}\nAddress : {3}\nCity : {4}\nState : {5}\nZip : {6}\nPhoneNumber : {7}\nEmail : {8}", model.Id, model.FirstName, model.LastName, model.Address, model.City, model.State, model.Zip, model.PhoneNumber, model.Email);
+                }
+            }
+            con.Close();
+        }
+
     }
 }

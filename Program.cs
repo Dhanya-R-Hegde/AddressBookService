@@ -8,7 +8,8 @@
             //AddressBookOperations.CreateTable();
             //AddressBookOperations.InsertIntoTable();
             //AddressBookOperations.EditInfoByName();
-            AddressBookOperations.DeleteInfoByName();
+            //AddressBookOperations.DeleteInfoByName();
+            AddressBookOperations.RetriveDataBasedOnCity();
         }
     }
 }
