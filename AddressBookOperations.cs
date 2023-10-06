@@ -24,5 +24,16 @@ namespace AddressBookService
 
             con.Close();
         }
+
+        public static SqlConnection con = new SqlConnection("data source = (localdB)\\MSSQLLocalDB; initial catalog = AddressBookService; integrated security = true");
+        public static void CreateTable()
+        {
+            string query = "create table AddressBook(Id int primary key identity(1, 1), FirstName varchar(20) not null, LastName varchar(20), Address varchar(100) not null, City varchar(30) not null, State varchar(30) not null, Zip bigint not null, PhoneNumber bigint not null, Email varchar(50) not null);";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Table created successfully");
+            con.Close();
+        }
     }
 }

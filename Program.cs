@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            AddressBookOperations.CreateDatabase();
+            //AddressBookOperations.CreateDatabase();
+            AddressBookOperations.CreateTable();
         }
     }
 }
