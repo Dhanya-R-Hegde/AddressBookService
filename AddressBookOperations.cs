@@ -56,6 +56,15 @@ namespace AddressBookService
             con.Close();
         }
 
-        
+        public static void DeleteInfoByName()
+        {
+            string query = "DELETE FROM AddressBook where FirstName = 'Dhanya'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Data deleted successfully");
+            con.Close();
+        }
+
     }
 }
