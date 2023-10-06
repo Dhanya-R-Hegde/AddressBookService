@@ -45,5 +45,17 @@ namespace AddressBookService
             Console.WriteLine("Data inserted successfully");
             con.Close();
         }
+
+        public static void EditInfoByName()
+        {
+            string query = "Update AddressBook set LastName = 'Ramaswamy' where FirstName = 'Kavitha'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Data updated successfully");
+            con.Close();
+        }
+
+        
     }
 }

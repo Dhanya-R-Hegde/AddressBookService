@@ -6,8 +6,9 @@
         {
             //AddressBookOperations.CreateDatabase();
             //AddressBookOperations.CreateTable();
-            AddressBookOperations.InsertIntoTable();
-
+            //AddressBookOperations.InsertIntoTable();
+            AddressBookOperations.EditInfoByName();
+            //AddressBookOperations.DeleteInfoByName();
         }
     }
 }
